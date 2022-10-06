@@ -18,6 +18,8 @@ void reflection(float *result, float *vector, float *normal);
 void addition(float *result, float *vectorOne, float *vectorTwo);
 void subtraction(float *result, float *vectorOne, float *vectorTwo);
 void crossProduct(float *result, float *vectorOne, float *vectorTwo);
+void matrixMultiplication(float *result, float *matrix, float *vector);
 
 bool equalityCheck(float *vectorOne, float *vectorTwo, float tolerance);
+bool equalityCheckVector4D(float *vectorOne, float *vectorTwo, float tolerance);
 #endif

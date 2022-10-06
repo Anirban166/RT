@@ -61,9 +61,33 @@ void crossProduct(float *result, float *vectorOne, float *vectorTwo)
         result[i] = tempArray[i];
 }
 
+// Going with homogenous coordinates to take into account all possible matrix transformations:
+void matrixMultiplication(float *result, float *matrix, float *vector)
+{
+    for(int i = 0; i < 4; i++)
+    {
+        result[i] = 0.0;
+        for(int j = 0; j < 4; j++)
+        {
+            if(j != 3)
+                result[i] += matrix[4 * j + i] * vector[j];
+            else // Required vector's [x y z 1], so I'm making it possible to just pass a 3D vector: (i.e., not relying on the presence of vector[3])
+                result[i] += matrix[4 * j + i] * 1;
+        }
+    }
+}
+
 bool equalityCheck(float *vectorOne, float *vectorTwo, float tolerance)
 {
     for(int i = 0; i < 3; i++)
+        if(fabsf(vectorOne[i] - vectorTwo[i]) > tolerance)
+            return false;
+    return true;
+}
+
+bool equalityCheckVector4D(float *vectorOne, float *vectorTwo, float tolerance)
+{
+    for(int i = 0; i < 4; i++)
         if(fabsf(vectorOne[i] - vectorTwo[i]) > tolerance)
             return false;
     return true;
