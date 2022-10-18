@@ -11,6 +11,14 @@ void scale(float *vector, float scalar)
         vector[i] *= scalar;
 }
 
+float distance(float *vectorOne, float *vectorTwo)
+{
+    float distance = 0.0;
+    for (int i = 0; i < 3; i++)
+        distance += pow((vectorOne[i] - vectorTwo[i]), 2);
+    return sqrt(distance);
+}
+
 float angleQuick(float *vectorOne, float *vectorTwo)
 {
     return (dotProduct(vectorOne, vectorTwo)) / (length(vectorOne) * length(vectorTwo));

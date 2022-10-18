@@ -9,6 +9,7 @@
 
 float length(float *vector);
 float angle(float *vectorOne, float *vectorTwo);
+float distance(float *vectorOne, float *vectorTwo);
 float angleQuick(float *vectorOne, float *vectorTwo);
 float dotProduct(float *vectorOne, float *vectorTwo);
 
