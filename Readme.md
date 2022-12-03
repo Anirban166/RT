@@ -1,6 +1,11 @@
-> Code for the project(s) to be open-sourced later next month.
+<h3 align = "center">
+Recursive Raycaster
+</h3>
 
-## Current progress
+Build the executable using `make` and run using: 
+```c
+./raytrace [ImageWidth] [ImageHeight] [InputSceneName] [OutputFileName].ppm
+```
 
 | Raytracing | Illumination | Raycasting |
 |:--- | :--- | :--- |

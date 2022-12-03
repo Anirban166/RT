@@ -1,0 +1,5 @@
+*.o
+*.ppm
+.vscode/
+raytrace
+.DS_Store

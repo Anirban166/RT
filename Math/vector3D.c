@@ -31,8 +31,9 @@ float angle(float *vectorOne, float *vectorTwo)
 
 void normalization(float *result, float *vector)
 {
+    float vectorLength = length(vector);
     for(int i = 0; i < 3; i++)
-        result[i] = vector[i] / length(vector);
+        result[i] = vector[i] / vectorLength;
 }
 
 float dotProduct(float *vectorOne, float *vectorTwo)
@@ -48,8 +49,9 @@ void addition(float *result, float *vectorOne, float *vectorTwo)
 
 void reflection(float *result, float *vector, float *normal)
 {
+    float product = dotProduct(normal, vector);
     for(int i = 0; i < 3; i++)
-        result[i] = vector[i] - (2 * dotProduct(normal, vector) * normal[i]);
+        result[i] = vector[i] - (2 * product * normal[i]);
 }
 
 void subtraction(float *result, float *vectorOne, float *vectorTwo)
